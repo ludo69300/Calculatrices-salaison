@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<header>
+    <meta charset="UTF-8">
+    <title>Calculateur-de-param-tres-de-coupe</title>
+    <script src="scripts/main.js" defer></script>
+</header>
+
+<body>
+
+    <head>
+        <h1>Calculatrice salaison</h1>
+        <a href="#salaison">SALAISON SOUS VIDE</a>
+        <a href="#saumure">SAUMURE LEGERE</a>
+        <a href="#foie">FOIE GRAS</a>
+        <a href="#pizza">PÂTE À PIZZA</a>
+        <a href="#cote">CÔTE DE BOEUF</a>
+        <a href="#saumon">SAUMON FUMÉ</a>
+        <a href="#buns">PÂTE À BUNS</a>
+
+    </head>
+    <main>
+        <form action="" method="post">
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="salaison">Salaison sous vide</h2></legend> <!-- Titre du fieldset -->
+                <div>
+                    <label for="typeMateriau">Poids viande (en grammes)</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="100" max="20000" step="1"
+                        class="field digits large required" type="number" value="1000">
+                    </div>
+                </div>
+                <div>
+                        <label for="typeMateriau">% de sel fin (4,5% recommandé)</label>
+                        <div>
+                        <select id="typeMateriau" name="typeMateriau" class="field large required valid"
+                            aria-invalid="false">
+                            <option value="3.00" vt="3.00%" data-i="0">3.00%</option>
+                            <option value="3.50" vt="3.50%" data-i="1">3.50%</option>
+                            <option value="4.00" vt="4.00%" data-i="2">4.00%</option>
+                            <option selected="selected" value="4.50"vt="4.50%">4.50%</option>
+                            <option value="5.00" vt="5.00%" data-i="4">5.00%</option>
+                            <option value="5.50" vt="5.50%" data-i="5">5.50%</option>
+                            <option value="6.00" vt="6.00%" data-i="6">6.00%</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sel fin (ou sel nitré)</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sucre roux</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="22.50gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Poivre moulu</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Baie de Genièvre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">4 épices</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="0.50gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Laurier </label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.0 Feuilles">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="saumure">Saumure légère</h2></legend> <!-- Titre du fieldset -->
+                <h3>Pour le Pastrami de Dinde ou le Poulet fumé</h3>
+                <div>
+                    <label for="typeMateriau">Volume d'eau en Litre</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="1" max="100" step="1"
+                        class="field digits large required" type="number" value="1">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sel fin</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="60.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sucre roux</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="30.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Poivre en grain</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="5.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Baie de Genièvre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="10.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sauge</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Thym</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00 branche(s)">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Clou de Girofle</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00 clou(s)">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Laurier</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="53052 rpm">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="cote">Côte de boeuf</h2></legend> <!-- Titre du fieldset -->
+                <div>
+                    <label for="typeMateriau">Poids de la côte de boeuf  (en grammes)</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="100" max="20000" step="1"
+                        class="field digits large required" type="number" value="1000">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">sel</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="foie">Foie Gras</h2></legend> <!-- Titre du fieldset -->
+                <div>
+                    <label for="typeMateriau">Poids foie gras (en grammes)</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="100" max="20000" step="1"
+                        class="field digits large required" type="number" value="1000">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sel fin</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sucre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="6.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Poivre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">4 épices</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Liquoreux</label>
+                    <div>   
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="20.00gr">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="saumon">Salage sous-vide Saumon fumé </h2></legend> <!-- Titre du fieldset -->
+                <div>
+                    <label for="typeMateriau">Poids de la truite ou saumon (en grammes)</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="100" max="20000" step="1"
+                        class="field digits large required" type="number" value="1000">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Gros sel de Guérande moulu ou sel fin</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sucre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="6.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Baie de Genièvre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="pizza">Pâte à pizza</h2></legend> <!-- Titre du fieldset -->
+                <div>
+                    <label for="typeMateriau">Poids de la pâte (en grammes)</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="100" max="20000" step="1"
+                        class="field digits large required" type="number" value="1000">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Farine</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Eau</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="6.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sel</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Levure fraîche de boulanger</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00gr">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="overflow:auto;width:25%;display:inline-block;">
+                <legend><h2 id="buns">Pâte à buns</h2></legend> <!-- Titre du fieldset -->
+                <div>
+                    <label for="typeMateriau">Nombre de buns (de 100 grammes)</label>
+                    <div>
+                        <input inputmode="decimal" id="diam" name="diam" min="100" max="20000" step="1"
+                        class="field digits large required" type="number" value="10">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Poids total</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Farine</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="45.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Huile</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="6.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Eau</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="6.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Lait</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="6.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sel</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Sucre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Levure fraîche de boulanger</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="1.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Beurre</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Huile</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+                <div>
+                    <label for="vitesseBroche">Purée de pomme de terres</label>
+                    <div>
+                        <input id="vitesseBroche" name="vitessebroche" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="2.00gr">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
