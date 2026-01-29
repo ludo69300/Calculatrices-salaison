@@ -11,98 +11,58 @@ function claculSalaison() {
 	console.log("Hellos");
 	let inputsalaisonSelect = document.getElementById("salaisonSelect");
 	let inputsalaisonPoids = document.getElementById("salaisonPoids");
-	let indexsalaisonSelect = parseInt(inputsalaisonSelect.value);
+
+	let indexsalaisonSelect = parseFloat(inputsalaisonSelect.value);
 	let indexsalaisonPoids = parseInt(inputsalaisonPoids.value);
 
-	let inputDiam = document.getElementById("diam");
-	let inputNbD = document.getElementById("nbdent");
-	let inputMachine = document.getElementById("TypeMachine");
-	let btnLimite= document.getElementById("limite");
-	let inputVitMaxRotation= document.getElementById("vitMaxRotation");
-	let inputVitMaxAvance= document.getElementById("vitMaxAvance");
-
-	
-	let indexDiam = parseFloat(inputDiam.value);
-	let indexNbD= Math.round(inputNbD.value);
-	let indexMachine= parseInt(inputMachine.value);
-	let indexLimite= btnLimite.checked;
-	let indexVitMaxRotation = parseInt(inputVitMaxRotation.value);
-	let indexVitMaxAvance= parseInt(inputVitMaxAvance.value);
-	
 	inputsalaisonSelect.addEventListener("change", () => {
-		indexsalaisonSelect = parseInt(inputsalaisonSelect.value);
-		calculssalaison()
+		indexsalaisonSelect = parseFloat(inputsalaisonSelect.value);
+		calculssalaisonVide()
 	});
 	inputsalaisonPoids.addEventListener("change", () => {
 		indexsalaisonPoids = parseInt(inputsalaisonPoids.value);
-		calculssalaison()
+		calculssalaisonVide()
 	});
-	function calculssalaison() {
-		document.getElementById("salaisonSel").value=indexsalaisonSelect*indexsalaisonPoids;
-		document.getElementById("salaisonSucre").value=indexsalaisonSelect*indexsalaisonPoids/2;
-		document.getElementById("salaisonSel").value=indexsalaisonPoids*0.01;
+	function calculssalaisonVide() {
+		console.log("Hello World");
+		document.getElementById("salaisonSel").value=indexsalaisonSelect*indexsalaisonPoids+' gr';
+		document.getElementById("salaisonSucre").value=indexsalaisonSelect*indexsalaisonPoids/2+' gr';
+		document.getElementById("salaisonPoivre").value=indexsalaisonPoids*0.001+' gr';
+		document.getElementById("salaisonBaie").value=indexsalaisonPoids*0.001+' gr';
+		document.getElementById("salaisonEpices").value=indexsalaisonPoids*0.0005+' gr';
+		document.getElementById("salaisonLaurier").value=indexsalaisonPoids/500+' Feuilles';
 	};
-	inputDiam.addEventListener("change", () => {
-		indexDiam = parseFloat(inputDiam.value);
-		calculs()
+	let inputsaumureeau = document.getElementById("saumureeau");
+	let indexsaumureeau = parseInt(inputsaumureeau.value);
+	inputsaumureeau.addEventListener("change", () => {
+		indexsaumureeau = parseInt(inputsaumureeau.value);
+		document.getElementById("saumureSel").value=indexsaumureeau*60+' gr';
+		document.getElementById("saumureSucre").value=indexsaumureeau*30+' gr';
+		document.getElementById("saumurePoivre").value=indexsaumureeau*5+' gr';
+		document.getElementById("saumureBaie").value=indexsaumureeau*10+' gr';
+		document.getElementById("saumureSauge").value=indexsaumureeau*2+' gr';
+		document.getElementById("saumureThym").value=indexsaumureeau+' branche(s)';
+		document.getElementById("saumureClou").value=indexsaumureeau+' clou(s)';
+		document.getElementById("saumureLaurier").value=indexsaumureeau*2+' Feuilles';
 	});
-	inputNbD.addEventListener("change", () => {
-		indexNbD = Math.round(inputNbD.value);
-		calculs()
+	let inputcotePoids = document.getElementById("cotePoids");
+	let indexcotePoids = parseInt(inputcotePoids.value);
+	inputcotePoids.addEventListener("change", () => {
+		indexcotePoids = parseInt(inputcotePoids.value);
+		document.getElementById("coteSel").value=indexcotePoids*0.045+' gr';
 	});
-	inputMachine.addEventListener("change", () => {
-		indexMachine = parseInt(inputMachine.value);
-		calculs()
+	let inputfoiePoids = document.getElementById("foiePoids");
+	let indexfoiePoids = parseInt(inputfoiePoids.value);
+	inputfoiePoids.addEventListener("change", () => {
+		indexfoiePoids = parseInt(inputfoiePoids.value);
+		document.getElementById("foieSel").value=indexsaumureeau*60+' gr';
+		document.getElementById("saumureSucre").value=indexsaumureeau*30+' gr';
+		document.getElementById("saumurePoivre").value=indexsaumureeau*5+' gr';
+		document.getElementById("saumureBaie").value=indexsaumureeau*10+' gr';
+		document.getElementById("saumureSauge").value=indexsaumureeau*2+' gr';
+		document.getElementById("saumureThym").value=indexsaumureeau+' branche(s)';
+		document.getElementById("saumureClou").value=indexsaumureeau+' clou(s)';
+		document.getElementById("saumureLaurier").value=indexsaumureeau*2+' Feuilles';
 	});
-	btnLimite.addEventListener("change", () => {
-		indexLimite = btnLimite.checked;
-		calculs()
-	});
-	vitMaxRotation.addEventListener("change", () => {
-		indexVitMaxRotation = parseInt(vitMaxRotation.value);
-		calculs()
-	});
-	inputVitMaxAvance.addEventListener("change", () => {
-		indexVitMaxAvance = parseInt(inputVitMaxAvance.value);
-		calculs()
-	});
-	function calculs() {
-
-		// On calcule la vitesse de rotation :
-		let n = calculFrRotation(listeParam[indexMateriau][indexFraise], indexDiam);
-		if (indexLimite){ 
-			if (n>indexVitMaxRotation);
-				{n=indexVitMaxRotation};
-		};
-		console.log("n : "+n);
-		document.getElementById("vitesseBroche").value = n;
-
-		// On calcule la vitesse dâ€™avance :
-		let fz = listeParam[indexMateriau][indexDiam+1];
-		console.log("Fz : " + fz);
-		let vf = calculAvance(n, fz,indexNbD,);
-		console.log("vf : "+vf + "vf Max : " + indexVitMaxAvance);
-		// On adapte de nouveau la vitesse de rotation :
-		if (indexLimite) {
-			if (vf>indexVitMaxAvance) {
-				ratio=parseInt((indexVitMaxAvance/vf)*100)/100;
-				vf=indexVitMaxAvance;
-				console.log("ratio : "+ratio);
-				document.getElementById("vitesseBroche").value=n*ratio;
-			}	
-		}
-		document.getElementById("vitesseAvance").value=vf;
-
-
-		// On calcule la vitesse de rotation sur Z:
-		calculAvanceZ(vf);
-		let ap = listeParam[indexMateriau][indexDiam+6];
-		let coef=1;
-		if (indexLimite){ 
-			coef= coeficienMachine[indexMachine];
-		}
-		console.log("ap  :" + ap +" coef :  "+ + coef);
-		document.getElementById("profondeurPasse").value = ap/coef;
-	}
-	calculs();
 };
+claculSalaison();
