@@ -7,10 +7,10 @@ function calculAvance(n,fz,Z){
 function calculAvanceZ(vc){
 	document.getElementById("vitesseMaxAvanceZ").value = vc/2;
 };
-function claculParamcoupe() {
+function claculSalaison() {
 	console.log("Hellos");
-	let inputMateriau = document.getElementById("typeMateriau");
-	let inputFraise = document.getElementById("typeFraise");
+	let inputMateriau = document.getElementById("salaisonSelect");
+	let inputFraise = document.getElementById("salaisonPoids");
 	let inputDiam = document.getElementById("diam");
 	let inputNbD = document.getElementById("nbdent");
 	let inputMachine = document.getElementById("TypeMachine");
