@@ -9,8 +9,11 @@ function calculAvanceZ(vc){
 };
 function claculSalaison() {
 	console.log("Hellos");
-	let inputMateriau = document.getElementById("salaisonSelect");
-	let inputFraise = document.getElementById("salaisonPoids");
+	let inputsalaisonSelect = document.getElementById("salaisonSelect");
+	let inputsalaisonPoids = document.getElementById("salaisonPoids");
+	let indexsalaisonSelect = parseInt(inputsalaisonSelect.value);
+	let indexsalaisonPoids = parseInt(inputsalaisonPoids.value);
+
 	let inputDiam = document.getElementById("diam");
 	let inputNbD = document.getElementById("nbdent");
 	let inputMachine = document.getElementById("TypeMachine");
@@ -18,8 +21,7 @@ function claculSalaison() {
 	let inputVitMaxRotation= document.getElementById("vitMaxRotation");
 	let inputVitMaxAvance= document.getElementById("vitMaxAvance");
 
-	let indexMateriau = parseInt(inputMateriau.value);
-	let indexFraise = parseInt(inputFraise.value);
+	
 	let indexDiam = parseFloat(inputDiam.value);
 	let indexNbD= Math.round(inputNbD.value);
 	let indexMachine= parseInt(inputMachine.value);
@@ -27,14 +29,19 @@ function claculSalaison() {
 	let indexVitMaxRotation = parseInt(inputVitMaxRotation.value);
 	let indexVitMaxAvance= parseInt(inputVitMaxAvance.value);
 	
-	inputMateriau.addEventListener("change", () => {
-		indexMateriau = parseInt(inputMateriau.value);
-		calculs()
+	inputsalaisonSelect.addEventListener("change", () => {
+		indexsalaisonSelect = parseInt(inputsalaisonSelect.value);
+		calculssalaison()
 	});
-	inputFraise.addEventListener("change", () => {
-		indexFraise = parseInt(inputFraise.value);
-		calculs()
+	inputsalaisonPoids.addEventListener("change", () => {
+		indexsalaisonPoids = parseInt(inputsalaisonPoids.value);
+		calculssalaison()
 	});
+	function calculssalaison() {
+		document.getElementById("salaisonSel").value=indexsalaisonSelect*indexsalaisonPoids;
+		document.getElementById("salaisonSucre").value=indexsalaisonSelect*indexsalaisonPoids/2;
+		document.getElementById("salaisonSel").value=indexsalaisonPoids*0.01;
+	};
 	inputDiam.addEventListener("change", () => {
 		indexDiam = parseFloat(inputDiam.value);
 		calculs()
