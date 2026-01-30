@@ -23,6 +23,20 @@
             <fieldset style="overflow:auto;width:25%;display:inline-block;">
                 <legend><h2 id="salaison">Salaison sous vide</h2></legend> <!-- Titre du fieldset -->
                 <div>
+                    <label for="salaisonHauteur">Hauteur viande (en Cm)</label>
+                    <div>
+                        <input inputmode="decimal" id="salaisonHauteur" name="salaisonHauteur" min="1" max="20" step="1"class="field digits large required" type="number" value="4">
+                    </div>
+                </div>
+                <div>
+                    <label for="salaisonJour">Nombre de jour</label>
+                    <div>
+                        <input id="salaisonJour" name="salaisonJour" readonly="readonly"
+                        class="codepeoplecalculatedfield field large valid" type="text" value="3 j">
+                    </div>
+                </div>
+                <div>
+                <div>
                     <label for="salaisonPoids">Poids viande (en grammes)</label>
                     <div>
                         <input inputmode="decimal" id="salaisonPoids" name="salaisonPoids" min="100" max="20000" step="1"
