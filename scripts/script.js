@@ -22,6 +22,12 @@ function claculSalaison() {
 		document.getElementById("salaisonEpices").value=indexsalaisonPoids*0.0005+' gr';
 		document.getElementById("salaisonLaurier").value=indexsalaisonPoids/500+' Feuilles';
 	};
+	let inputhaut = document.getElementById("salaisonHauteur");
+	let indexhaut = parseInt(inputhaut.value);
+	inputhaut.addEventListener("change", () => {
+		indexhaut = parseInt(inputhaut.value);
+		document.getElementById("salaisonJour").value=indexhaut/2+1+' j';
+	});
 	let inputsaumureeau = document.getElementById("saumureeau");
 	let indexsaumureeau = parseInt(inputsaumureeau.value);
 	inputsaumureeau.addEventListener("change", () => {
