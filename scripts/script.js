@@ -3,7 +3,7 @@ function fcntypeSalaison() {
 	for (var i = 0; i < elts.length; i++) {
 		elts[i].style.display = 'none';
 	  };
-	  elts[document.getElementById("typesalaison").value].style.display = 'inline-block';
+	elts[document.getElementById("typesalaison").value].style.display = 'inline-block';
 };
 function claculSalaison() {
 	//console.log("Hellos");
