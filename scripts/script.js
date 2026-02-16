@@ -1,3 +1,10 @@
+function fcntypeSalaison() {
+	var elts = document.getElementsByTagName('fieldset'),i;
+	for (var i = 0; i < elts.length; i++) {
+		elts[i].style.display = 'none';
+	  };
+	  elts[document.getElementById("typesalaison").value].style.display = 'inline-block';
+};
 function claculSalaison() {
 	//console.log("Hellos");
 	let inputsalaisonSelect = document.getElementById("salaisonSelect");
